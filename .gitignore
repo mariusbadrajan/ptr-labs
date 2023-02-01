@@ -1,2 +1,20 @@
+# general
 *.class
+
+# sbt
+project/project/
+project/target/
+target/
+
+# intellij idea
 *.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# bloop and metals
+.bloop
+.bsp
+.metals
+project/metals.sbt
