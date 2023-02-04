@@ -1,6 +1,6 @@
 package org.marius
 
-import lab1.Calculator
+import lab1.checkpoint1.bonus.Calculator
 
 import org.scalatest.funsuite.AnyFunSuite
 
