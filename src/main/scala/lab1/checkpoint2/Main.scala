@@ -49,6 +49,8 @@ object Main extends App {
         MainTask.encode("lorem", 3)
         MainTask.decode("oruhp", 3)
 
+        MainTask.lettersCombinations("23")
+
         MainTask.groupAnagrams(List("eat", "tea", "tan", "ate", "nat", "bat"))
     }
 

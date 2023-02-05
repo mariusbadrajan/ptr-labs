@@ -59,6 +59,29 @@ object MainTask {
     encode(word, 26 - shift)
   }
 
+  def lettersCombinations(digits: String): Unit = {
+    val result: ArrayBuffer[String] = new ArrayBuffer[String]()
+    val phoneNumbers = Map(
+      '2' -> "abc", '3' -> "def", '4' -> "ghi", '5' -> "jkl",
+      '6' -> "mno", '7' -> "pqrs", '8' -> "tuv", '9' -> "wxyz")
+
+    traverse(0, "")
+
+    def traverse(depth: Int, currentString: String): Unit = {
+      if (currentString.length == digits.length) {
+        result.addOne(currentString)
+        return
+      }
+      val currentKey = digits.charAt(depth)
+      for (i <- 0 to phoneNumbers(currentKey).length - 1 by 1) {
+        traverse(depth + 1, currentString + phoneNumbers(currentKey).charAt(i))
+      }
+    }
+
+    result.foreach(x => print(x + " "))
+    println()
+  }
+
   def groupAnagrams(anagramsList: List[String]): Unit = {
     var anagramsMap: Map[String, ArrayBuffer[String]] = Map[String, ArrayBuffer[String]]()
 
