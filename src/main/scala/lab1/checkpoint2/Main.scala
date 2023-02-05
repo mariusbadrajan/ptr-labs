@@ -1,6 +1,7 @@
 package org.marius
 package lab1.checkpoint2
 
+import lab1.checkpoint2.bonus.Bonus
 import lab1.checkpoint2.maintask.MainTask
 import lab1.checkpoint2.minimal.Minimal
 
@@ -11,6 +12,11 @@ object Main extends App {
 
     println("Main:")
     main()
+    println()
+
+    println("Bonus:")
+    bonus()
+    println()
 
     def minimal() = {
         Minimal.isPrime(5)
@@ -44,4 +50,8 @@ object Main extends App {
         MainTask.decode("oruhp", 3)
     }
 
+    def bonus() = {
+        Bonus.commonPrefix(List("flower", "flow", "flight"))
+        Bonus.commonPrefix(List("alpha", "beta", "gamma"))
+    }
 }
