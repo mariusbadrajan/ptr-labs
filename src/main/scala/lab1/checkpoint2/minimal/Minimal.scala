@@ -18,4 +18,14 @@ object Minimal {
     println(f"$result%.4f")
   }
 
+  def reverse(list: List[Int]): Unit = {
+    val reversedList: Array[Int] = new Array[Int](list.length)
+
+    for (i <- list.length to 1 by -1) {
+      reversedList(list.length - i) = list(i - 1)
+    }
+
+    reversedList.foreach(x => print(x + " "))
+  }
+
 }
