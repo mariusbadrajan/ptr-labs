@@ -26,6 +26,15 @@ object Minimal {
     }
 
     reversedList.foreach(x => print(x + " "))
+
+    // list.reverse.foreach(x => print(x + " "))
+    println()
+  }
+
+  def uniqueSum(list: List[Int]): Unit = {
+    val uniqueValuesSet = list.toSet
+
+    println(uniqueValuesSet.sum)
   }
 
 }
