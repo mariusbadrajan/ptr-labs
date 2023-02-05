@@ -1,9 +1,9 @@
 package org.marius
-package lab1.checkpoint2.maintask
+package lab1.checkpoint2.main
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
-object MainTask {
+object Main {
   def removeConsecutiveDuplicates(list: List[Int]): Unit = {
     val removedConsecutiveDuplicatesArr: ArrayBuffer[Int] = new ArrayBuffer[Int]()
     removedConsecutiveDuplicatesArr.addOne(list(0))
