@@ -84,4 +84,19 @@ object Minimal {
     println(newString)
   }
 
+  def smallestNumber(x:Int, y:Int, z:Int): Unit = {
+    var arr: Array[Int] = Array[Int](x, y, z)
+
+    arr = arr.sorted
+
+    if (arr(0) == 0) {
+      val temp = arr(0)
+      arr(0) = arr(1)
+      arr(1) = temp
+    }
+
+    arr.foreach(print)
+    println()
+  }
+
 }

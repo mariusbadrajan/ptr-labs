@@ -18,4 +18,7 @@ object Main extends App {
 
     Minimal.translator(Map("mama" -> "mother", "papa" -> "father"), "mama is with papa")
 
+    Minimal.smallestNumber(4, 5, 3)
+    Minimal.smallestNumber(0, 3, 4)
+
 }
