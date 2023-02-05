@@ -23,4 +23,6 @@ object Main extends App {
 
     Minimal.rotateLeft(List(1 , 2 , 4 , 8 , 4), 3)
 
+    Minimal.listRightAngleTriangles()
+
 }
