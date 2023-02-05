@@ -43,4 +43,20 @@ object MainTask {
     println()
   }
 
+  def encode(word: String, shift: Int): Unit = {
+    var shiftedWord = ""
+
+    word.foreach(letter => {
+      val offset = if (letter.isUpper) 'A'.toInt else 'a'.toInt
+      val newLetter = ((letter.toInt + shift - offset) % 26 + offset).asInstanceOf[Char]
+      shiftedWord += newLetter
+    })
+
+    println(shiftedWord)
+  }
+
+  def decode(word: String, shift: Int): Unit = {
+    encode(word, 26 - shift)
+  }
+
 }

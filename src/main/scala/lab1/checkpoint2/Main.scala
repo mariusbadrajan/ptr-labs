@@ -39,6 +39,9 @@ object Main extends App {
         MainTask.removeConsecutiveDuplicates(List(1, 2, 2, 2, 4, 8, 4))
 
         MainTask.lineWords(List("Hello", "Alaska", "Dad", "Peace"))
+
+        MainTask.encode("lorem", 3)
+        MainTask.decode("oruhp", 3)
     }
 
 }
