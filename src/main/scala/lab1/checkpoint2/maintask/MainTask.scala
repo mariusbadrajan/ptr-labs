@@ -17,5 +17,30 @@ object MainTask {
     removedConsecutiveDuplicatesArr.foreach(x => print(x + " "))
     println()
   }
-  
+
+  def lineWords(wordsArr: List[String]): Unit = {
+    val firstRow = Set('q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p')
+    val secondRow = Set('a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l')
+    val thirdRow = Set('z', 'x', 'c', 'v', 'b', 'n', 'm')
+
+    val filteredWords = wordsArr.filter(word => {
+      val lowerCaseWord = word.toLowerCase()
+      val setToCheck = if (firstRow.contains(lowerCaseWord.charAt(0))) {
+          firstRow
+        }
+        else if (secondRow.contains(lowerCaseWord.charAt(0))) {
+          secondRow
+        }
+        else {
+          thirdRow
+        }
+
+        lowerCaseWord.forall(setToCheck.contains)
+        // lowerCaseWord.forall(letter => setToCheck.contains(letter))
+    })
+
+    filteredWords.foreach(x => print(x + " "))
+    println()
+  }
+
 }

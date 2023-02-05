@@ -37,6 +37,8 @@ object Main extends App {
 
     def main() = {
         MainTask.removeConsecutiveDuplicates(List(1, 2, 2, 2, 4, 8, 4))
+
+        MainTask.lineWords(List("Hello", "Alaska", "Dad", "Peace"))
     }
 
 }
