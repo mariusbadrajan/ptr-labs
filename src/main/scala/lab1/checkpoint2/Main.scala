@@ -53,5 +53,7 @@ object Main extends App {
     def bonus() = {
         Bonus.commonPrefix(List("flower", "flow", "flight"))
         Bonus.commonPrefix(List("alpha", "beta", "gamma"))
+
+        Bonus.toRoman("13")
     }
 }
