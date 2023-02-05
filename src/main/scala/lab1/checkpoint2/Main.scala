@@ -14,4 +14,6 @@ object Main extends App {
 
     Minimal.extractRandomN(List(1, 2, 4, 8, 4), 3)
 
+    Minimal.firstFibonacciElements(7)
+
 }

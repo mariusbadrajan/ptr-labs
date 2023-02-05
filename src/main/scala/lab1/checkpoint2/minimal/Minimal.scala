@@ -52,4 +52,23 @@ object Minimal {
     println()
   }
 
+  private def fibonacci(n: Int): Int = {
+    n match {
+      case 0 => 0
+      case 1 => 1
+      case _ => fibonacci (n - 2) + fibonacci(n - 1)
+    }
+  }
+
+  def firstFibonacciElements(n: Int): Unit = {
+    for (i <- List.range(1, n + 1)) {
+      print(fibonacci(i))
+      if (i != n) {
+        print(", ")
+      }
+    }
+
+    println()
+  }
+
 }
