@@ -12,4 +12,10 @@ object Minimal {
       println(!(2 to (i-1)).exists(nr => i % nr == 0))
   }
 
+  def cylinderArea(height: Int, radius: Int): Unit = {
+    val result = 2 * Math.PI * radius * height + 2 * Math.PI * Math.pow(radius, 2)
+
+    println(f"$result%.4f")
+  }
+
 }
