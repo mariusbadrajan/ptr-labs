@@ -59,4 +59,25 @@ object MainTask {
     encode(word, 26 - shift)
   }
 
+  def groupAnagrams(anagramsList: List[String]): Unit = {
+    var anagramsMap: Map[String, ArrayBuffer[String]] = Map[String, ArrayBuffer[String]]()
+
+    anagramsList.foreach(item => {
+      val key = item.toCharArray.sortWith(_ < _).mkString
+      if (!anagramsMap.contains(key)) {
+        anagramsMap += (key -> ArrayBuffer(item))
+      }
+      else {
+        anagramsMap.get(key) match {
+          case Some(list: ArrayBuffer[String]) => anagramsMap.updated(key, list.addOne(item))
+          case None => anagramsMap
+        }
+      }
+    })
+
+    anagramsMap.foreach((key, values) => {
+      println(s"$key: ${values.mkString(", ")}")
+    })
+  }
+
 }

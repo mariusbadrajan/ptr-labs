@@ -48,6 +48,8 @@ object Main extends App {
 
         MainTask.encode("lorem", 3)
         MainTask.decode("oruhp", 3)
+
+        MainTask.groupAnagrams(List("eat", "tea", "tan", "ate", "nat", "bat"))
     }
 
     def bonus() = {
