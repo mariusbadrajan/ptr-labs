@@ -55,5 +55,8 @@ object Main extends App {
         Bonus.commonPrefix(List("alpha", "beta", "gamma"))
 
         Bonus.toRoman("13")
+
+        Bonus.factorize(13)
+        Bonus.factorize(42)
     }
 }

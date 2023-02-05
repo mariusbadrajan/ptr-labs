@@ -1,6 +1,9 @@
 package org.marius
 package lab1.checkpoint2.bonus
 
+import javax.swing.plaf.ListUI
+import scala.collection.mutable.ListBuffer
+
 object Bonus {
   def commonPrefix(list: List[String]): Unit = {
     var commonPrefix = list(0)
@@ -40,6 +43,20 @@ object Bonus {
     })
 
     println(romanNumber)
+  }
+
+  def factorize(number: Int): Unit = {
+    var currentNumber = number
+    val primes: ListBuffer[Int] = new ListBuffer[Int]()
+
+    for (i <- 2 to currentNumber by 1) {
+      while (currentNumber % i == 0) {
+        primes.addOne(i)
+        currentNumber /= i
+      }
+    }
+    primes.foreach(x => print(x + " "))
+    println()
   }
 
 }
