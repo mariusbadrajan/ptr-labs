@@ -16,4 +16,6 @@ object Main extends App {
 
     Minimal.firstFibonacciElements(7)
 
+    Minimal.translator(Map("mama" -> "mother", "papa" -> "father"), "mama is with papa")
+
 }

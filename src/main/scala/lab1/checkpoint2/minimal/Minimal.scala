@@ -1,6 +1,7 @@
 package org.marius
 package lab1.checkpoint2.minimal
 
+import java.util.Dictionary
 import scala.util.Random
 
 object Minimal {
@@ -69,6 +70,18 @@ object Minimal {
     }
 
     println()
+  }
+
+  def translator(dictionary: Map[String, String], originalString: String): Unit = {
+    var newString = originalString;
+
+    dictionary.keys.foreach(key => {
+      if (originalString.contains(key)) {
+        newString = newString.replace(key, dictionary(key))
+      }
+    })
+
+    println(newString)
   }
 
 }
