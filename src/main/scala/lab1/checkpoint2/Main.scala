@@ -21,4 +21,6 @@ object Main extends App {
     Minimal.smallestNumber(4, 5, 3)
     Minimal.smallestNumber(0, 3, 4)
 
+    Minimal.rotateLeft(List(1 , 2 , 4 , 8 , 4), 3)
+
 }

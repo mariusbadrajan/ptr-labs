@@ -99,4 +99,11 @@ object Minimal {
     println()
   }
 
+  def rotateLeft(list: List[Int], places: Int): Unit = {
+    val rotatedList = list.drop(places % list.length) ::: list.take(places % list.length)
+
+    rotatedList.foreach(x => print(x + " "))
+    println()
+  }
+
 }
