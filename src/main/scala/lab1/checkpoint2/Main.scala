@@ -11,4 +11,7 @@ object Main extends App {
     Minimal.reverse(List(1, 2, 4, 8, 4))
 
     Minimal.uniqueSum(List(1, 2, 4, 8, 4, 2))
+
+    Minimal.extractRandomN(List(1, 2, 4, 8, 4), 3)
+
 }

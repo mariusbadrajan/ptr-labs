@@ -1,6 +1,8 @@
 package org.marius
 package lab1.checkpoint2.minimal
 
+import scala.util.Random
+
 object Minimal {
   // check whether a number is prime
   def isPrime(i: Int): Unit = {
@@ -35,6 +37,19 @@ object Minimal {
     val uniqueValuesSet = list.toSet
 
     println(uniqueValuesSet.sum)
+  }
+
+  def extractRandomN(list: List[Int], n: Int): Unit = {
+    val random = Random()
+    val randomList: Array[Int] = new Array[Int](n)
+
+    for (i <- 0 to n - 1 by 1) {
+      val randomIndex = random.nextInt(list.length)
+      randomList(i) = list(randomIndex)
+    }
+
+    randomList.foreach(x => print(x + " "))
+    println()
   }
 
 }
