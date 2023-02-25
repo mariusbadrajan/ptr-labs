@@ -7,8 +7,6 @@ import akka.actor.typed.{ActorRef, Behavior}
 import scala.collection.mutable.ListBuffer
 
 object AverageCounter {
-  // list of messages (double values) that the actor can receive
-  private val list: ListBuffer[Double] = ListBuffer[Double](0.0)
   // current average - the average of all the messages received so far
   private var currentAverage: Double = 0
 
@@ -23,10 +21,8 @@ object AverageCounter {
     Behaviors.receiveMessage {
       // handle the message of type Double
       case message: Double =>
-        // add the message to the list
-        list.addOne(message)
         // update the current average
-        currentAverage = list.sum / list.length
+        currentAverage = (currentAverage + message) / 2
         // log the current average
         context.log.info(s"Current average is $currentAverage")
         // return the same behavior
