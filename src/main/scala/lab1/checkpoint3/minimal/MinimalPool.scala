@@ -31,7 +31,7 @@ object MinimalPool {
 
         // context.spawn is a method that creates a child actor and returns its ActorRef
         val averageCounter = context.spawn(AverageCounter(), "average-counter")
-        // sned 3 messages to the actor
+        // send 3 messages to the actor
         averageCounter ! 10
         averageCounter ! 10
         averageCounter ! 10
