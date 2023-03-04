@@ -10,9 +10,7 @@ import scala.util.Random
 
 object Respondent {
   sealed trait RespondentCommand
-
   case class SendMessage(replyTo: ActorRef[ExaminerCommand]) extends RespondentCommand
-
   case object Kill extends RespondentCommand
 
   def apply(): Behavior[RespondentCommand] =
@@ -22,6 +20,7 @@ object Respondent {
           .supervise[RespondentCommand] {
             Behaviors
               .receiveMessagePartial[RespondentCommand] {
+                // Respond randomly to the question.
                 case SendMessage(replyTo) =>
                   Thread.sleep(Examiner.waitResponse)
                   context.log.info("Answered ;|")
@@ -32,6 +31,7 @@ object Respondent {
                     replyTo ! Fail
                   }
                   Behaviors.same
+                // Kill the respondent.
                 case Kill =>
                   context.log.error("Respondent killed.")
                   Behaviors.stopped

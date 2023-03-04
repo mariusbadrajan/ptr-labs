@@ -36,7 +36,7 @@ object Supervisor {
           .supervise[Command] {
             Behaviors
               .receiveMessagePartial[Command] {
-                // Inialized the process by sending the first message to the first worker.
+                // Initialize the process by sending the first message to the first worker.
                 case CleanString(message) =>
                   currentMessage = message
                   firstWorker ! Split(message, context.self)
