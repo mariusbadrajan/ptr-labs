@@ -1,6 +1,8 @@
 package org.marius
 package lab1.checkpoint4
 
+import lab1.checkpoint4.bonus.Examiner
+import lab1.checkpoint4.bonus.Examiner.StartExamination
 import lab1.checkpoint4.main.Supervisor as MainSupervisor
 import lab1.checkpoint4.main.Supervisor.CleanString
 import lab1.checkpoint4.minimal.Supervisor.{ForwardToAllWorkers, ForwardToWorker, Kill as KillSupervisor}
@@ -41,4 +43,10 @@ object Main extends App {
   mainSystem ! CleanString("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum.")
   // wait until all actors have executed their termination logic
   Thread.sleep(1000)
+
+  // Bonus task
+  // ActorSystem is a factory for creating and running top-level actors
+  private val bonusSystem = ActorSystem(Examiner(15), "bonus-pool")
+  // send a message to the actor
+  bonusSystem ! StartExamination
 }
