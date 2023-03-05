@@ -14,4 +14,9 @@ object Main extends App {
   ResponseParser.extractQuotes()
   // Print the extracted quotes.
   ResponseParser.printExtractedQuotes()
+
+  // Call the method to convert the quotes to JSON.
+  ResponseParser.convertToJson()
+  // Print the JSON quotes.
+  ResponseParser.printJsonQuotes()
 }
