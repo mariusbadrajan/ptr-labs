@@ -433,6 +433,8 @@ In this laboratory work, I got to know Scala and wrote the first program and the
 
 ## Bibliography
 
+### Basic
+
 - Installation guide to install [Scala](https://docs.scala-lang.org/getting-started/index.html).
 - Installation guide to install [sbt](https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Windows.html).
 - Getting started
@@ -440,3 +442,16 @@ In this laboratory work, I got to know Scala and wrote the first program and the
   on the command line.
 - Scala [cheatsheet](https://docs.scala-lang.org/cheatsheets/index.html).
 - Scala [api](https://scala-lang.org/api/3.x/).
+
+### Akka
+
+- Akka [docs](https://doc.akka.io/docs/akka/current/index.html).
+- Akka [api](https://doc.akka.io/api/akka/current/index.html).
+- Akka [japi](https://doc.akka.io/japi/akka/current/index.html).
+- Akka [http](https://doc.akka.io/docs/akka-http/current/index.html).
+
+### Regex
+
+- Regex online - [first source](https://regexr.com/).
+- Regex online - [second source](https://regex101.com/).
+- Regex IntelliJ IDEA [docs](https://www.jetbrains.com/help/idea/regular-expressions.html).
