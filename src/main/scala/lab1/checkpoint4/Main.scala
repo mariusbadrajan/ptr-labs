@@ -1,8 +1,9 @@
 package org.marius
 package lab1.checkpoint4
 
-import lab1.checkpoint4.bonus.Examiner
+import lab1.checkpoint4.bonus.CarMainSupervisor.TurnIgnitionOn
 import lab1.checkpoint4.bonus.Examiner.StartExamination
+import lab1.checkpoint4.bonus.{CarMainSupervisor, Examiner}
 import lab1.checkpoint4.main.Supervisor as MainSupervisor
 import lab1.checkpoint4.main.Supervisor.CleanString
 import lab1.checkpoint4.minimal.Supervisor.{ForwardToAllWorkers, ForwardToWorker, Kill as KillSupervisor}
@@ -46,7 +47,15 @@ object Main extends App {
 
   // Bonus task
   // ActorSystem is a factory for creating and running top-level actors.
-  private val bonusSystem = ActorSystem(Examiner(15), "bonus-pool")
+  private val bonusSystem1 = ActorSystem(Examiner(15), "bonus-1-pool")
   // Send a message to the actor.
-  bonusSystem ! StartExamination
+  bonusSystem1 ! StartExamination
+
+  //TODO: Better approach: send a message to all actors to stop processing measurements, when max nr of allowed failures is reached,
+  // because SOMETIMES when a supervisor dies, A/SOME child actor/s will be terminated only when it/they will complete processing current message and
+  // it may happen that child actor/s will try to send a message to a DEAD supervisor and "dead letters" error will be thrown.
+  // ActorSystem is a factory for creating and running top-level actors.
+  private val bonusSystem2 = ActorSystem(CarMainSupervisor(), "bonus-2-pool")
+  // Send a message to the actor.
+  bonusSystem2 ! TurnIgnitionOn
 }
