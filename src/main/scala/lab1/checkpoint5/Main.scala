@@ -19,4 +19,9 @@ object Main extends App {
   ResponseParser.convertToJson()
   // Print the JSON quotes.
   ResponseParser.printJsonQuotes()
+
+  //TODO: 1. Minimal: Save converted JSON quotes as a JSON file.
+  //TODO: 2. Main: Do main task (WebServer with DB integration).
+  //TODO: 3. Bonus: Do bonus task (SpotifyApi with OAuth 2.0).
+  //TODO: 4. Write comments.
 }
